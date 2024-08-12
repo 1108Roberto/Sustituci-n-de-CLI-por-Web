@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Actualizar Receta{% endblock %}
+
+{% block content %}
+<h2>Actualizar receta</h2>
+<form method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="{{ receta.nombre }}"><br>
+    <label for="ingredientes">Ingredientes:</label>
+    <input type="text" id="ingredientes" name="ingredientes" value="{{ receta.ingredientes }}"><br>
+    <label for="pasos">Pasos:</label>
+    <textarea id="pasos" name="pasos">{{ receta.pasos }}</textarea><br>
+    <button type="submit">Actualizar</button>
+</form>
+<a href="{{ url_for('index') }}">Volver al listado</a>
+{% endblock %}
