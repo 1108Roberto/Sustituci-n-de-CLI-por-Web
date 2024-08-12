@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Buscar Receta{% endblock %}
+
+{% block content %}
+<h2>Buscar receta</h2>
+<form method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" required>
+    <button type="submit">Buscar</button>
+</form>
+
+{% if receta %}
+<h3>Receta Encontrada</h3>
+<p><strong>Nombre:</strong> {{ receta.nombre }}</p>
+<p><strong>Ingredientes:</strong> {{ receta.ingredientes }}</p>
+<p><strong>Pasos:</strong> {{ receta.pasos }}</p>
+{% endif %}
+
+<a href="{{ url_for('index') }}">Volver al listado</a>
+{% endblock %}

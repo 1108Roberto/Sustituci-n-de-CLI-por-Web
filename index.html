@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado de Recetas{% endblock %}
+
+{% block content %}
+<h2>Listado de Recetas</h2>
+<ul>
+    {% for receta in recetas %}
+        <li>
+            ID: {{ receta.id }} - Nombre: {{ receta.nombre }}
+            <a href="{{ url_for('actualizar', id=receta.id) }}">Actualizar</a>
+            <form action="{{ url_for('eliminar', id=receta.id) }}" method="post" style="display:inline;">
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
